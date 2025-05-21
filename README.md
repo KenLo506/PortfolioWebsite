@@ -55,6 +55,3 @@ npm start
 - `/components` - Reusable React components
 - `/styles` - Global styles and Tailwind configuration
 
-## License
-
-MIT 
