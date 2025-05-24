@@ -1,14 +1,10 @@
-# Ken Lo's Portfolio Website
+# [My Portfolio Website](https://kenloportfolio.vercel.app/)
 
-A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS.
 
 ## Features
 
 - Responsive design that works on all devices
 - Modern UI with smooth animations
-- Sections for About, Skills, Experience, and Projects
-- Contact information and social media links
-- Built with performance and accessibility in mind
 
 ## Tech Stack
 
@@ -59,6 +55,3 @@ npm start
 - `/components` - Reusable React components
 - `/styles` - Global styles and Tailwind configuration
 
-## License
-
-MIT 
