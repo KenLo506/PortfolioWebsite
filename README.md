@@ -1,11 +1,6 @@
 # [My Portfolio Website](https://kenloportfolio.vercel.app/)
 
 
-## Features
-
-- Responsive design that works on all devices
-- COOL UI
-
 ## Tech Stack
 
 - Next.js 14
