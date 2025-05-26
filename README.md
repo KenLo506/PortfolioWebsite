@@ -4,7 +4,7 @@
 ## Features
 
 - Responsive design that works on all devices
-- Modern UI with smooth animations
+- COOL UI
 
 ## Tech Stack
 
