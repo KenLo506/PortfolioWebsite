@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../components/animations'
 import emailjs from '@emailjs/browser'
@@ -9,6 +9,10 @@ import emailjs from '@emailjs/browser'
 type NotificationType = 'success' | 'error' | null
 
 export default function Contact() {
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!)
+  }, [])
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,16 +30,43 @@ export default function Contact() {
     setNotification({ type: null, message: '' })
 
     try {
-      const templateParams = {
+      // First email: Visitor's message to you
+      const visitorMessageParams = {
         from_name: formData.name,
         from_email: formData.email,
+        to_email: 'loken506@gmail.com',
         message: formData.message,
       }
 
+      // Second email: Your confirmation to visitor
+      const confirmationParams = {
+        to_name: formData.name,
+        to_email: formData.email,
+        from_name: 'Ken Lo',
+        message: 'Thank you for reaching out! I have received your message and will get back to you soon.'
+      }
+
+      console.log('Sending emails with params:', {
+        serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        visitorMessageParams,
+        confirmationParams
+      })
+
+      // Send visitor's message to you
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template for receiving messages
+        visitorMessageParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+
+      // Send confirmation to visitor
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template for confirmation emails
+        confirmationParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
 
@@ -45,6 +76,7 @@ export default function Contact() {
       })
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
+      console.error('EmailJS error:', error)
       setNotification({
         type: 'error',
         message: 'Failed to send message. Please try again later.'
