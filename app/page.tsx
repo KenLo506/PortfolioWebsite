@@ -36,18 +36,32 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="heading-2 mb-8 text-text-dark">About Me</h2>
+              <motion.h2 
+                className="heading-2 mb-8 text-text-dark relative inline-block group "
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="relative z-10">About Me</span>
+                <motion.span 
+                  className="absolute inset-0 bg-primary/20 rounded-lg -z-10 origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </motion.h2>
               <motion.div 
-                className="prose max-w-none bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="prose max-w-none bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:bg-black group"
                 whileHover={cardHover}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-lg text-text-light">
-                                    Hi! I'm an Software Engineer with nearly 2 years of experience in backend development, website creation, feature implementation, and
-                    generative AI applications, specializing in building user-friendly web experiences. I love making cool yet intuitive applications. I mainly use Java, Python, JavaScript
-                    and C++ with hands-on experience in Spring Boot, React, Node.js, and MySQL. Feel free to contact me, I'm always excited to talk about new opportunities. 
+                <p className="text-lg text-text-light group-hover:text-white transition-colors duration-300">
+                  Hi! I'm an Software Engineer with nearly 2 years of experience in backend development, website creation, feature implementation, and
+                  generative AI applications, specializing in building user-friendly web experiences. I love making cool yet intuitive applications. I mainly use Java, Python, JavaScript
+                  and C++ with hands-on experience in Spring Boot, React, Node.js, and MySQL. Feel free to contact me, I'm always excited to talk about new opportunities. 
                 </p>
               </motion.div>
             </motion.div>
@@ -63,7 +77,21 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="heading-2 mb-8 text-text-dark">Skills</h2>
+              <motion.h2 
+                className="heading-2 mb-8 text-text-dark relative inline-block group "
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="relative z-10">Skills</span>
+                <motion.span 
+                  className="absolute inset-0 bg-primary/20 rounded-lg -z-10 origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </motion.h2>
               <motion.div 
                 className="grid grid-cols-1 md:grid-cols-3 gap-8"
                 variants={staggerContainer}
@@ -73,27 +101,27 @@ export default function Home() {
               >
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
                   whileHover={cardHover}
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-text-dark">Languages</h3>
-                  <p className="text-text-light">Java, JavaScript, HTML/CSS, Python, C/C++/C#</p>
+                  <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Languages</h3>
+                  <p className="text-text-light group-hover:text-white transition-colors duration-300">Java, JavaScript, HTML/CSS, Python, C/C++/C#</p>
                 </motion.div>
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
                   whileHover={cardHover}
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-text-dark">Frameworks</h3>
-                  <p className="text-text-light">Node.js, React, Spring Boot, .NET, Angular, Qt</p>
+                  <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Frameworks</h3>
+                  <p className="text-text-light group-hover:text-white transition-colors duration-300">Node.js, React, Spring Boot, .NET, Angular, Qt</p>
                 </motion.div>
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
                   whileHover={cardHover}
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-text-dark">Development Practices</h3>
-                  <p className="text-text-light">Azure, CI/CD, MySQL, Git, Linux, Agile</p>
+                  <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Development Practices</h3>
+                  <p className="text-text-light group-hover:text-white transition-colors duration-300">Azure, CI/CD, MySQL, Git, Linux, Agile</p>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -109,7 +137,21 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="heading-2 mb-8 text-text-dark">Experience</h2>
+              <motion.h2 
+                className="heading-2 mb-8 text-text-dark relative inline-block group "
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="relative z-10">Experience</span>
+                <motion.span 
+                  className="absolute inset-0 bg-primary/20 rounded-lg -z-10 origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </motion.h2>
               <motion.div 
                 className="space-y-12"
                 variants={staggerContainer}
@@ -227,7 +269,21 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="heading-2 mb-8 text-text-dark">Projects</h2>
+              <motion.h2 
+                className="heading-2 mb-8 text-text-dark relative inline-block group "
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="relative z-10">Projects</span>
+                <motion.span 
+                  className="absolute inset-0 bg-primary/20 rounded-lg -z-10 origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </motion.h2>
               <motion.div 
                 className="space-y-8"
                 variants={staggerContainer}
