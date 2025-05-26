@@ -3,6 +3,7 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import CursorGlow from './CursorGlow'
+import ParticleBackground from './ParticleBackground'
 
 const iconHover = {
   scale: 1.2,
@@ -44,6 +45,7 @@ export default function Hero() {
   return (
     <section className="h-screen flex items-center justify-center bg-black relative overflow-hidden">
       <CursorGlow />
+      <ParticleBackground />
       
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-background opacity-0"
@@ -59,7 +61,7 @@ export default function Hero() {
           className="text-center"
         >
           <motion.h1 
-            className="text-6xl font-bold mb-4 text-white"
+            className="text-6xl font-bold mb-4 text-white select-none"
             variants={textVariants}
             custom={0}
           >
@@ -77,7 +79,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.h2 
-            className="text-2xl text-white mb-6"
+            className="text-2xl text-white mb-6 select-none"
             variants={textVariants}
             custom={1}
           >
@@ -85,7 +87,7 @@ export default function Hero() {
           </motion.h2>
           
           <motion.p 
-            className="text-lg text-white mb-8"
+            className="text-lg text-white mb-8 select-none"
             variants={textVariants}
             custom={2}
           >
