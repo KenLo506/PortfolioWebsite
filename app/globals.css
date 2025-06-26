@@ -28,4 +28,23 @@ body {
   .heading-2 {
     @apply text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl;
   }
+}
+
+/* Viewport units for carousel */
+@layer utilities {
+  .w-40vmin {
+    width: 40vmin;
+  }
+  
+  .h-56vmin {
+    height: 56vmin;
+  }
+  
+  .gap-4vmin {
+    gap: 2vmin;
+  }
+  
+  .gap-2vmin {
+    gap: 2vmin;
+  }
 } 

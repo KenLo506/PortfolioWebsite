@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import Hero from './components/Hero'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ImageCarousel from './components/ImageCarousel'
 import { fadeInUp, staggerContainer, cardHover } from './components/animations'
 
 export default function Home() {
@@ -52,7 +53,7 @@ export default function Home() {
                 />
               </motion.h2>
               <motion.div 
-                className="prose max-w-none bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:bg-black group"
+                className="prose max-w-none bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:bg-gray-700 group"
                 whileHover={cardHover}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +102,7 @@ export default function Home() {
               >
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-gray-700 group"
                   whileHover={cardHover}
                 >
                   <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Languages</h3>
@@ -109,7 +110,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-gray-700 group"
                   whileHover={cardHover}
                 >
                   <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Frameworks</h3>
@@ -117,7 +118,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div 
                   variants={fadeInUp} 
-                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-black group"
+                  className="bg-background-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 hover:bg-gray-700 group"
                   whileHover={cardHover}
                 >
                   <h3 className="text-xl font-semibold mb-4 text-text-dark group-hover:text-white transition-colors duration-300">Development Practices</h3>
@@ -363,9 +364,10 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-        <section className="section-padding ">
-                    
-        </section>
+
+        {/* Image Carousel Section */}
+        <ImageCarousel />
+
         {/* Contact Section */}
         <Contact />
 
