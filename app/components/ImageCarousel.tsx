@@ -9,7 +9,6 @@ export default function ImageCarousel() {
   const [mouseDownAt, setMouseDownAt] = useState("0")
   const [prevPercentage, setPrevPercentage] = useState(0)
   const [percentage, setPercentage] = useState(0)
-  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   const images = [
     '/images/carousel1.jpg',
@@ -22,50 +21,49 @@ export default function ImageCarousel() {
     '/images/carousel8.jpg',
   ]
 
-  const handleOnDown = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault()
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-    setMouseDownAt(clientX.toString())
-  }
+//   const handleOnDown = (e: React.MouseEvent | React.TouchEvent) => {
+//     e.preventDefault()
+//     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+//     setMouseDownAt(clientX.toString())
+//   }
 
-  const handleOnUp = () => {
-    setMouseDownAt("0")
-    setPrevPercentage(percentage)
-  }
+//   const handleOnUp = () => {
+//     setMouseDownAt("0")
+//     setPrevPercentage(percentage)
+//   }
 
-  const handleOnMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (mouseDownAt === "0" || !trackRef.current) return
+//   const handleOnMove = (e: React.MouseEvent | React.TouchEvent) => {
+//     if (mouseDownAt === "0" || !trackRef.current) return
 
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-    const mouseDelta = parseFloat(mouseDownAt) - clientX
-    const maxDelta = window.innerWidth / 2
+//     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+//     const mouseDelta = parseFloat(mouseDownAt) - clientX
+//     const maxDelta = window.innerWidth / 2
 
-    const percentage = (mouseDelta / maxDelta) * -100
-    const nextPercentageUnconstrained = prevPercentage + percentage
-    const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100)
+//     const percentage = (mouseDelta / maxDelta) * -100
+//     const nextPercentageUnconstrained = prevPercentage + percentage
+//     const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100)
 
-    setPercentage(nextPercentage)
+//     setPercentage(nextPercentage)
 
-    trackRef.current.animate({
-      transform: `translate(${nextPercentage*3}%, -50%)`
-    }, { duration: 1200, fill: "forwards" })
+//     trackRef.current.animate({
+//       transform: `translate(${nextPercentage*3}%, -50%)`
+//     }, { duration: 1200, fill: "forwards" })
 
-    const imagesElements = trackRef.current.getElementsByClassName("image")
-    for (let i = 0; i < imagesElements.length; i++) {
-      const image = imagesElements[i] as HTMLElement
-      image.animate({
-        objectPosition: `${100 + nextPercentage}% center`
-      }, { duration: 1200, fill: "forwards" })
-    }
-  }
+//     const imagesElements = trackRef.current.getElementsByClassName("image")
+//     for (let i = 0; i < imagesElements.length; i++) {
+//       const image = imagesElements[i] as HTMLElement
+//       image.animate({
+//         objectPosition: `${100 + nextPercentage}% center`
+//       }, { duration: 1200, fill: "forwards" })
+//     }
+//   }
 
   // Global event listeners
   useEffect(() => {
-    // Set initial position exactly like the original code
+
     if (trackRef.current) {
       trackRef.current.style.transform = 'translate(0%, -50%)'
       
-      // Set initial object-position for all images
       const imagesElements = trackRef.current.getElementsByClassName("image")
       for (let i = 0; i < imagesElements.length; i++) {
         const image = imagesElements[i] as HTMLElement
@@ -74,7 +72,7 @@ export default function ImageCarousel() {
     }
 
     const handleGlobalMouseDown = (e: MouseEvent) => {
-      e.preventDefault()
+    //   e.preventDefault()
       setMouseDownAt(e.clientX.toString())
     }
 
@@ -143,19 +141,19 @@ export default function ImageCarousel() {
     }
 
     window.addEventListener('mousedown', handleGlobalMouseDown)
-    window.addEventListener('touchstart', handleGlobalTouchStart, { passive: false })
+    // window.addEventListener('touchstart', handleGlobalTouchStart, { passive: false })
     window.addEventListener('mouseup', handleGlobalMouseUp)
-    window.addEventListener('touchend', handleGlobalTouchEnd)
+    // window.addEventListener('touchend', handleGlobalTouchEnd)
     window.addEventListener('mousemove', handleGlobalMouseMove)
-    window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false })
+    // window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false })
 
     return () => {
       window.removeEventListener('mousedown', handleGlobalMouseDown)
-      window.removeEventListener('touchstart', handleGlobalTouchStart)
+    //   window.removeEventListener('touchstart', handleGlobalTouchStart)
       window.removeEventListener('mouseup', handleGlobalMouseUp)
-      window.removeEventListener('touchend', handleGlobalTouchEnd)
+    //   window.removeEventListener('touchend', handleGlobalTouchEnd)
       window.removeEventListener('mousemove', handleGlobalMouseMove)
-      window.removeEventListener('touchmove', handleGlobalTouchMove)
+    //   window.removeEventListener('touchmove', handleGlobalTouchMove)
     }
   }, [mouseDownAt, prevPercentage, percentage])
 

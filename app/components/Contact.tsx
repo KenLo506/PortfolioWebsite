@@ -98,7 +98,7 @@ export default function Contact() {
     <section className="section-padding relative overflow-hidden">
       {/* Gradient Background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-background via-gray-900 to-black opacity-90"
+        className="absolute inset-0 bg-gradient-to-b from-background via-gray-900 to-black opacity-90 z-0"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -154,7 +154,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="pointer-events-auto w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Your name"
                     disabled={isSubmitting}
                   />
