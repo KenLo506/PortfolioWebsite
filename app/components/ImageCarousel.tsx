@@ -174,12 +174,14 @@ export default function ImageCarousel() {
         ref={trackRef}
         id="image-track"
         className="flex gap-4vmin absolute left-1/2 top-1/2 transform translate-y-[-50%] select-none"
+        draggable="false"
         style={{
           userSelect: 'none',
           WebkitUserSelect: 'none',
           MozUserSelect: 'none',
           msUserSelect: 'none'
         }}
+        onDragStart={(e) => e.preventDefault()} 
       >
         {images.map((image, index) => (
           <img
