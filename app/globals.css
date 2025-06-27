@@ -19,6 +19,7 @@ body {
   
   .container-custom {
     @apply max-w-7xl mx-auto;
+    position: relative;
   }
   
   .heading-1 {

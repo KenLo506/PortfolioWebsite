@@ -9,6 +9,7 @@ export default function ImageCarousel() {
   const [mouseDownAt, setMouseDownAt] = useState("0")
   const [prevPercentage, setPrevPercentage] = useState(0)
   const [percentage, setPercentage] = useState(0)
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   const images = [
     '/images/carousel1.jpg',
@@ -46,7 +47,7 @@ export default function ImageCarousel() {
     setPercentage(nextPercentage)
 
     trackRef.current.animate({
-      transform: `translate(${nextPercentage}%, -50%)`
+      transform: `translate(${nextPercentage*3}%, -50%)`
     }, { duration: 1200, fill: "forwards" })
 
     const imagesElements = trackRef.current.getElementsByClassName("image")
@@ -96,19 +97,16 @@ export default function ImageCarousel() {
       if (mouseDownAt === "0" || !trackRef.current) return
 
       const mouseDelta = parseFloat(mouseDownAt) - e.clientX
-      const newWindow = window.innerWidth * 2.5
-      const maxDelta = newWindow / 2
+      const maxDelta = window.innerWidth / 2
       
-      console.log(window.innerWidth / 2)
       const percentage = (mouseDelta / maxDelta) * -100
       const nextPercentageUnconstrained = prevPercentage + percentage
       const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100)
 
-
       setPercentage(nextPercentage)
 
       trackRef.current.animate({
-        transform: `translate(${nextPercentage}%, -50%)`
+        transform: `translate(${nextPercentage*3}%, -50%)`
       }, { duration: 1200, fill: "forwards" })
 
       const imagesElements = trackRef.current.getElementsByClassName("image")
@@ -132,7 +130,7 @@ export default function ImageCarousel() {
       setPercentage(nextPercentage)
 
       trackRef.current.animate({
-        transform: `translate(${nextPercentage}%, -50%)`
+        transform: `translate(${nextPercentage*3}%, -50%)`
       }, { duration: 1200, fill: "forwards" })
 
       const imagesElements = trackRef.current.getElementsByClassName("image")
