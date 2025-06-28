@@ -61,15 +61,6 @@ export default function ImageCarousel() {
   // Global event listeners
   useEffect(() => {
 
-    if (trackRef.current) {
-      trackRef.current.style.transform = 'translate(0%, -50%)'
-      
-      const imagesElements = trackRef.current.getElementsByClassName("image")
-      for (let i = 0; i < imagesElements.length; i++) {
-        const image = imagesElements[i] as HTMLElement
-        image.style.objectPosition = '100% center'
-      }
-    }
 
     const handleGlobalMouseDown = (e: MouseEvent) => {
     //   e.preventDefault()
@@ -99,7 +90,7 @@ export default function ImageCarousel() {
       
       const percentage = (mouseDelta / maxDelta) * -100
       const nextPercentageUnconstrained = prevPercentage + percentage
-      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100)
+      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, -6.5), -101)
 
       setPercentage(nextPercentage)
 
@@ -176,6 +167,7 @@ export default function ImageCarousel() {
         className="flex gap-4vmin absolute left-1/2 top-1/2 transform translate-y-[-50%] select-none"
         draggable="false"
         style={{
+          transform: `translate(${-19.5}%, -50%)`,
           userSelect: 'none',
           WebkitUserSelect: 'none',
           MozUserSelect: 'none',
