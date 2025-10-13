@@ -160,31 +160,46 @@ export default function Home() {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <motion.div 
-                  variants={fadeInUp} 
-                  className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
-                  whileHover={cardHover}
+                <a 
+                  href="https://pmtron.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', display: 'block' }} 
                 >
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-cover bg-center bg-no-repeat"
-                    style={{ 
-                      backgroundImage: 'url(/images/wss.jpg)',
-                      filter: 'blur(5px)'
-                    }}
-                  />
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-semibold text-text-dark">Web Surfing Studios (WSS)</h3>
-                    <p className="text-text-light mb-4">Software Development Intern • 4/2025 – Present</p>
-                    <ul className="list-disc list-inside text-text-light space-y-2">
-                      <li>Developed and deployed full-stack web applications using Node.js, React, Spring Boot, and AWS</li>
-                      <li>Implemented CI/CD pipelines and cloud infrastructure to optimize performance and reliability</li>
-                      <li>Collaborated with agile teams to build real-world projects</li>
-                      <li>Hands-on experience with DevOps, site reliability engineering, and scalable system architectures</li>
-                      <li>Contributed to WSS's learning platform along with many of their ongoing apps, showing 10% decrease in overall bugs</li>
-                    </ul>
-                  </div>
-                </motion.div>
+                  <motion.div 
+                    variants={fadeInUp} 
+                    className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
+                    whileHover={cardHover}
+                  >
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-cover bg-center bg-no-repeat"
+                      style={{ 
+                        backgroundImage: 'url(/images/wss.jpg)',
+                        filter: 'blur(5px)'
+                      }}
+                    />
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-semibold text-text-dark">Web Surfing Studios (WSS)</h3>
+                      <p className="text-text-light mb-4">Software Development Intern • 4/2025 – Present</p>
+                      <ul className="list-disc list-inside text-text-light space-y-2">
+                        <li>Developed and deployed full-stack web applications using Node.js, React, Spring Boot, and AWS</li>
+                        <li>Implemented CI/CD pipelines and cloud infrastructure to optimize performance and reliability</li>
+                        <li>Developed robust RESTful APIs for core functionalities on AI project manager(CRUD operations for projects, tasks,
+  users).</li>
+                        <li>Developed and refined effective prompt engineering strategies for various AI functionalities.</li>
+                        <li>Created comprehensive API documentation, user manuals, and technical documentation for future maintenance and
+  scaling.</li>
+                      </ul>
+                    </div>
+                  </motion.div>
+                </a>
 
+                <a 
+                  href="https://community.kde.org/GSoC/2024/StatusReports/KenLo" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+                >
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -209,7 +224,14 @@ export default function Home() {
                     </ul>
                   </div>
                 </motion.div>
-
+                </a>
+                
+                <a 
+                  href="https://kenlo506.github.io/restaurant-prototype/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+                >
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -233,6 +255,8 @@ export default function Home() {
                     </ul>
                   </div>
                 </motion.div>
+                </a>
+                
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -292,6 +316,12 @@ export default function Home() {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
+              <a 
+                  href="https://docs.google.com/presentation/d/1dvvnpDFC8c7FRDyFzj0NgFkXPMRRdU6YxKtNDP-XqdY/edit?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+              >
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -314,6 +344,8 @@ export default function Home() {
                     </ul>
                   </div>
                 </motion.div>
+              </a>
+
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -336,6 +368,13 @@ export default function Home() {
                     </ul>
                   </div>
                 </motion.div>
+
+              <a 
+                  href="https://notapple.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+              >
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -360,6 +399,7 @@ export default function Home() {
                     </ul>
                   </div>
                 </motion.div>
+                </a>
               </motion.div>
             </motion.div>
           </div>
