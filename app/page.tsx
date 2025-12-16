@@ -345,7 +345,12 @@ export default function Home() {
                   </div>
                 </motion.div>
               </a>
-
+              <a 
+                  href="https://madam-tang.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+              >
                 <motion.div 
                   variants={fadeInUp} 
                   className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
@@ -354,20 +359,21 @@ export default function Home() {
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-cover bg-center bg-no-repeat"
                     style={{ 
-                      backgroundImage: 'url(/images/pawsome.jpg)',
+                      backgroundImage: 'url(/images/madamtang.jpg)',
                       filter: 'blur(4px)'
                     }}
                   />
                   <div className="relative z-10">
-                    <h3 className="text-2xl font-semibold text-text-dark">Pet Boarding Website</h3>
-                    <p className="text-text-light mb-4">Personal Project</p>
+                    <h3 className="text-2xl font-semibold text-text-dark">Madam Tang Website</h3>
+                    <p className="text-text-light mb-4">Business Project</p>
                     <ul className="list-disc list-inside text-text-light space-y-2">
-                    <li>Developed a full-stack pet boarding management system with an integrated database, ensuring secure data handling for pet bookings, facility tracking, and customer interactions.</li>
-                      <li>Implemented controllers and views to support structured GET and POST operations, including cascading deletes, validation logic for booking consistency, and referential integrity enforcement.</li>
-                      <li>Designed scalable architecture using Entity Framework-backed models and view models for optimized user interactions, enhancing system efficiency and usability.</li>
+                      <li>Developed a modern, responsive web application for a pan-Asian bakery, featuring a custom-branded interface and a dynamic product showcase to enhance online presence</li>
+                      <li>Architected a high-performance landing page using React and Vercel, achieving optimized load times and seamless cross-device compatibility</li>
+                      <li>Handled the design and deployed a digital storefront for a snack cart, streamlining customer discovery through interactive menus and integrated location services.</li>
                     </ul>
                   </div>
                 </motion.div>
+              </a>
 
               <a 
                   href="https://notapple.vercel.app/" 
