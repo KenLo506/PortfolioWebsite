@@ -161,7 +161,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <a 
-                  href="https://pmtron.com" 
+                  href="https://www.websurfingstudios.com/Content/whitepapers/PMtron%20-%20Web%20Surfing%20Studios.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   style={{ textDecoration: 'none', display: 'block' }} 
@@ -317,35 +317,6 @@ export default function Home() {
                 viewport={{ once: true }}
               >
               <a 
-                  href="https://docs.google.com/presentation/d/1dvvnpDFC8c7FRDyFzj0NgFkXPMRRdU6YxKtNDP-XqdY/edit?usp=sharing" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  style={{ textDecoration: 'none', display: 'block' }} 
-              >
-                <motion.div 
-                  variants={fadeInUp} 
-                  className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
-                  whileHover={cardHover}
-                >
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-cover bg-center bg-no-repeat"
-                    style={{ 
-                      backgroundImage: 'url(/images/ml-poison.jpg)',
-                      filter: 'blur(4px)'
-                    }}
-                  />
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-semibold text-text-dark">ML Poison Prediction</h3>
-                    <p className="text-text-light mb-4">Academic Project</p>
-                    <ul className="list-disc list-inside text-text-light space-y-2">
-                      <li>Developed machine learning models to classify the edibility of mushrooms based on hundreds of morphological and ecological features</li>
-                      <li>Implemented classification algorithms including Naive Bayes, Support Vector Machines (SVM), and Random Forest</li>
-                      <li>Conducted extensive hyperparameter tuning and feature selection to optimize model performance</li>
-                    </ul>
-                  </div>
-                </motion.div>
-              </a>
-              <a 
                   href="https://madam-tang.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
@@ -374,6 +345,36 @@ export default function Home() {
                   </div>
                 </motion.div>
               </a>
+              <a 
+                  href="https://docs.google.com/presentation/d/1dvvnpDFC8c7FRDyFzj0NgFkXPMRRdU6YxKtNDP-XqdY/edit?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', display: 'block' }} 
+              >
+                <motion.div 
+                  variants={fadeInUp} 
+                  className="relative group bg-background-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-transparent hover:border-primary/20 overflow-hidden"
+                  whileHover={cardHover}
+                >
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-cover bg-center bg-no-repeat"
+                    style={{ 
+                      backgroundImage: 'url(/images/ml-poison.jpg)',
+                      filter: 'blur(4px)'
+                    }}
+                  />
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-semibold text-text-dark">ML Poison Prediction</h3>
+                    <p className="text-text-light mb-4">Academic Project</p>
+                    <ul className="list-disc list-inside text-text-light space-y-2">
+                      <li>Developed machine learning models to classify the edibility of mushrooms based on hundreds of morphological and ecological features</li>
+                      <li>Implemented classification algorithms including Naive Bayes, Support Vector Machines (SVM), and Random Forest</li>
+                      <li>Conducted extensive hyperparameter tuning and feature selection to optimize model performance</li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </a>
+
 
               <a 
                   href="https://notapple.vercel.app/" 
